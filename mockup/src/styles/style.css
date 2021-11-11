@@ -1,0 +1,107 @@
+:root {
+    --button-calc: #54BFAC;
+    --results-area: #54BFAC;
+    --background-form: #2D2F58;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive;
+
+    font-family: 'Oxygen', sans-serif;
+}
+.header {
+    margin: 180px;
+}
+main {
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    height: 100%;
+    
+}
+.container {
+    display: grid;
+    grid-auto-columns: 100%;
+    grid-template-rows: 50% 50%;
+    grid-auto-flow: column;
+    gap: 10px;
+    /*margin: 0px 170px 0px 80px;*/
+    /*place-content: center;*/
+}
+.results-area {
+    border: solid 3px red;
+    background-color: var(--results-area);
+    border-radius: 10px;
+    margin: 20px;
+}
+.results-area .results-area__graphic {
+    color: white;
+    border: solid green;
+    text-align: center;
+}
+.results-area p {
+    color: white;
+}
+.results-area-table h3 {
+    color: white;
+}
+.results-area-table .results-table {
+    border: solid black;
+}
+.results-area-table .results-table th, td {
+    border: solid 1px black;
+}
+.container-form {
+    background-color: var(--background-form);
+    border-radius: 10px;
+    
+    text-align: center;
+    margin: 20px;
+   
+}
+.logo {
+    display: grid;
+}
+
+.logo img{
+    height: 100px;
+    width: 60px;
+    justify-self: center;
+    margin: 10px 0px 20px 0px;
+}
+.logo h1, h2 {
+    color: white;
+}
+.equations-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+}
+.equations-form label {
+    color: white;
+}
+.equations-form input {
+    margin: 10px 0px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px;
+    height: 30px;
+    width: 200px;
+}
+.equations-form button {
+    background-color: var(--button-calc);
+    color: white;
+    margin-top: 10px;
+    width: 195px;
+    text-align: center;
+    margin-bottom: 50px;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px;
+    justify-items: flex-end;
+}
