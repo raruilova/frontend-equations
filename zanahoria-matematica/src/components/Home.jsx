@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Home.scss";
+import "../styles/Home.css";
 import logo from "@logos/logo.jpg";
 
 const Home = () => (
   <div className="body">
     <div className="main">
-      <section className="home-section align-items-center">
+      <section id="section" className="home-section align-items-center">
         <div className="container-landing">
           <div className="row align-items-center">
             <div className="home-text">
@@ -25,7 +25,7 @@ const Home = () => (
             </div>
             <div className="home-img">
               <div className="img-box">
-                <img src={logo} alt="" />
+                <img className="img" src={logo} alt="" />
               </div>
             </div>
           </div>

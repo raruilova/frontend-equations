@@ -1,14 +1,9 @@
 @import "vars";
 
 .body-form {
-  background: rgb(191, 120, 139);
-  background: linear-gradient(
-    90deg,
-    rgba(191, 120, 139, 0.6656863428965336) 0%,
-    rgba(84, 191, 172, 0.6516807406556373) 100%
-  );
+  margin-top: 80px;
 }
-main {
+.main {
   background: rgba(255, 255, 255, 0.25);
 
   backdrop-filter: blur(4px);
