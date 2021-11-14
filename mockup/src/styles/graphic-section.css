@@ -20,17 +20,7 @@
       rgba(84, 191, 172, 0.6516807406556373) 100%
     );
   }
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+ 
   .header {
     margin-bottom: 80px;
   }
