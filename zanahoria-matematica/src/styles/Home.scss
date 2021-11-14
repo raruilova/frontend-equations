@@ -4,7 +4,7 @@
 ::after {
   box-sizing: border-box;
 }
-body {
+.body {
   min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
@@ -18,7 +18,7 @@ body {
   -webkit-top-highlight-color: transparent;
   padding: 5vh 15px;
 }
-body::before {
+.body::before {
   content: "";
   position: fixed;
   left: 0;
@@ -47,7 +47,7 @@ a {
   max-width: 1200px;
   margin: auto;
 }
-.container {
+.container-landing {
   padding: 0 40px;
   width: 100%;
 }
@@ -111,6 +111,7 @@ a {
   text-transform: capitalize;
 }
 .home-text h2 {
+  color: black;
   font-size: 20px;
   text-transform: capitalize;
 }
@@ -131,7 +132,7 @@ a {
 /*Media queris*/
 
 @media (max-width: 991px) {
-  .container {
+  .container-landing {
     padding: 0;
   }
   .home-text,
