@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
-import logo from "@logos/logo.jpg";
+import logo from "@logos/logo-temp.jpg";
 
 const Home = () => (
   <div className="body">
