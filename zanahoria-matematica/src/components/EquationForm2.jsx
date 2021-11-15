@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/EquationForm2.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
 
@@ -6,6 +7,9 @@ const EquationForm2 = () => {
   return (
     <div className="body-form">
       <div className="main">
+        <Link to="/">
+          <button className="btn-back">Atras</button>
+        </Link>
         <div className="container-derivada">
           <section className="container-form-derivada">
             <div className="logo">

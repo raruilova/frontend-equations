@@ -1,0 +1,123 @@
+@import 'vars';
+
+.body-form {
+    margin-top: 80px;
+  }
+  
+  .main {
+    background: rgba(255, 255, 255, 0.25);
+  
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+    height: 100%;
+  }
+  
+  .container-result {
+    display: grid;
+    grid-auto-columns: 100%;
+    gap: 10px;
+    /*margin: 0px 170px 0px 80px;*/
+    /*place-content: center;*/
+  }
+  .result-area {
+    /*border: solid 3px red;*/
+    background-color: var(--background-form);
+    border-radius: 10px;
+    margin: 20px;
+  }
+  .result-area .result-area__graphic {
+    color: white;
+    /*border: solid green;*/
+    text-align: center;
+  }
+  .result-area__graphic img {
+    margin-top: 10px;
+      width: 200px;
+      height: 70px;
+    
+  }
+  .result-area p {
+    color: white;
+  }
+  
+  .container-table {
+    background-color: var(--results-area);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+  }
+  .results-table {
+    margin: auto;
+  }
+  .results-table table {
+    margin-bottom: 30px;
+  }
+  .results-area-table h3 {
+    margin-bottom: 10px;
+    color: white;
+  }
+  .results-area-table .results-table {
+    border: solid black;
+  }
+  .results-area-table .results-table th,
+  td {
+    border: solid 1px black;
+  }
+  .logo {
+    display: grid;
+  }
+  
+  .logo img {
+    height: 100px;
+    width: 160px;
+    justify-self: center;
+    margin: 10px 0px 20px 0px;
+  }
+  .logo h1,
+  h2 {
+    color: white;
+  }
+  
+  /*media queries*/
+  
+  @media (min-width: 720px) {
+    main {
+      margin: 0px 200px 20px 200px;
+    }
+    .container-result {
+      grid-auto-rows: 100%;
+      grid-template-columns: 50% 50%;
+      grid-auto-flow: row;
+      gap: 0;
+    }
+    .container-table {
+      grid-row: 1 / 1;
+    }
+    .result-area {
+      grid-row: 1 / 1;
+    }
+    .result-area {
+      margin: 40px 0px 40px 40px;
+      border-radius: 0;
+    }
+    .container-table {
+      margin: 40px 40px 40px 0px;
+      border-radius: 0;
+    }
+  }
+  
+  @media (max-width:1000px) {
+    main {
+      margin: 0px 10px 0px 10px;
+    }
+    .result-area__graphic img {
+      margin-top: 10px;
+    }
+    
+  }

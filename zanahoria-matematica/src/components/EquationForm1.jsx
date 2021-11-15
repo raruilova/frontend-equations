@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/EquationForm1.scss";
-import logoZanahoria from '@logos/logo-zanahoria-matematica.png';
+import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
 
 const EquationForm1 = () => {
   return (
     <div className="body-form">
       <div className="main">
+        <Link to="/">
+          <button className="btn-back">Atras</button>
+        </Link>
         <div className="container">
           <section className="container-form">
             <div className="logo">
-              <img
-                src={logoZanahoria}
-                alt="logo"
-              />
+              <img src={logoZanahoria} alt="logo" />
               <h1>Zanahoria matemática</h1>
               <h2>Ecuaciones</h2>
             </div>
@@ -44,7 +45,9 @@ const EquationForm1 = () => {
 
                 <input type="text" placeholder="2" disabled />
               </div>
+              <Link to="/graphic">
               <button className="button-graph">Ver gráfica</button>
+              </Link>
             </div>
             <h4>Error!</h4>
             <p>No se encontró una solución para esta ecuación</p>
