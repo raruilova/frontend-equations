@@ -19,9 +19,9 @@ const Home = () => (
               <Link to="/ecuacion1" className="btn">
                 Ecuacion 1
               </Link>
-              <a href="" className="btn">
+              <Link to="/ecuacion2" className="btn">
                 Ecuacion 2
-              </a>
+              </Link>
             </div>
             <div className="home-img">
               <div className="img-box">

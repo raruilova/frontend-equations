@@ -1,0 +1,146 @@
+@import "vars";
+
+.body-form {
+  margin-top: 80px;
+}
+
+.main {
+  background: rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  margin: 0px 10px 0px 10px;
+  height: 100%;
+}
+
+.container-derivada {
+  display: grid;
+  grid-auto-columns: 100%;
+  gap: 10px;
+}
+.result-area-derivada {
+  background-color: var(--results-area);
+  border-radius: 10px;
+  margin: 20px;
+}
+.result-area-derivada .result-area__title {
+  color: white;
+  text-align: center;
+  height: 10vh;
+}
+.result-area-derivada p {
+  color: white;
+}
+.result-area__equation-derivada {
+  background-color: var(--background-form);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+  padding: 20px 0px 20px 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.result-area__equation-derivada label {
+  margin-top: 5px;
+  padding: 0px 0px 0px 5px;
+}
+
+.result-area__equation-derivada .result-derivada {
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.container-form-derivada {
+  background-color: var(--background-form);
+  border-radius: 10px;
+
+  text-align: center;
+  margin: 20px;
+}
+.logo {
+  display: grid;
+}
+
+.logo img {
+  height: 100px;
+  width: 60px;
+  justify-self: center;
+  margin: 10px 0px 20px 0px;
+}
+.logo h1,
+h2 {
+  color: white;
+}
+.equations-form-derivada {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+.equations-form-derivada label {
+  color: white;
+}
+.equations-form-derivada input {
+  margin: 10px 0px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px;
+  height: 30px;
+  width: 200px;
+}
+.equations-form-derivada button {
+  background-color: var(--button-calc);
+  color: white;
+  margin-top: 10px;
+  width: 195px;
+  text-align: center;
+  margin-bottom: 50px;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 5px;
+  justify-items: flex-end;
+}
+
+/*media queries*/
+
+@media (min-width: 620px) {
+  main {
+    margin: 0px 200px 20px 200px;
+  }
+  .container-derivada {
+    grid-auto-rows: 100%;
+    grid-template-columns: 50% 50%;
+    grid-auto-flow: row;
+    gap: 0;
+  }
+  .container-form-derivada {
+    grid-row: 1 / 1;
+  }
+  .result-area-derivada {
+    grid-row: 1 / 1;
+  }
+  .result-area-derivada {
+    margin: 40px 40px 40px 0px;
+    border-radius: 0;
+  }
+  .container-form-derivada {
+    margin: 40px 0px 40px 40px;
+    border-radius: 0;
+  }
+  .results-area__equation-derivada {
+    margin: 25% 20px auto 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    margin: 0px 10px 0px 10px;
+  }
+}
