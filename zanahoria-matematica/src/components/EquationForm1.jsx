@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/EquationForm1.scss";
+import logoZanahoria from '@logos/logo-zanahoria-matematica.png';
 
 const EquationForm1 = () => {
   return (
@@ -9,8 +10,8 @@ const EquationForm1 = () => {
           <section className="container-form">
             <div className="logo">
               <img
-                src="https://png.pngtree.com/element_origin_min_pic/16/10/21/1bcf9578efa05099c01ad5684f9e47cf.jpg"
-                alt=""
+                src={logoZanahoria}
+                alt="logo"
               />
               <h1>Zanahoria matemática</h1>
               <h2>Ecuaciones</h2>
