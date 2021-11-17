@@ -1,7 +1,7 @@
 :root {
-  --button-calc: #54bfac;
-  --results-area: #54bfac;
-  --background-form: #2d2f58;
+  --button-calc: #DB8330;
+  --results-area: #DB8330;
+  --background-form: #404040;
 }
 
 * {
@@ -13,11 +13,12 @@
   font-family: "Oxygen", sans-serif;
 }
 body {
-  background: rgb(191, 120, 139);
+  background: rgb(255, 121, 21);
   background: linear-gradient(
     90deg,
-    rgba(191, 120, 139, 0.6656863428965336) 0%,
-    rgba(84, 191, 172, 0.6516807406556373) 100%
+    rgba(255, 121, 21, 0.4713235636051295) 0%,
+    rgba(160, 36, 36, 0.8802871490393032) 35%,
+    rgba(255, 121, 21, 0.40129555240064774) 100%
   );
 }
 
@@ -68,7 +69,7 @@ main {
   border-radius: 10px;
   color: white;
   margin: 10px;
-  height: 12vh;
+  height: 14vh;
 }
 .results {
   display: flex;
@@ -108,10 +109,10 @@ main {
 }
 
 .logo img {
-  height: 100px;
-  width: 60px;
+  height: 200px;
+  width: 200px;
   justify-self: center;
-  margin: 10px 0px 20px 0px;
+  margin: 10px 0px 10px 0px;
 }
 .logo h1,
 h2 {
@@ -150,7 +151,6 @@ h2 {
 
 /*media queries*/
 
-
 @media (min-width: 720px) {
   main {
     margin: 0px 200px 20px 200px;
@@ -188,7 +188,7 @@ h2 {
     border-radius: 0;
   }
 }
-@media (max-width:1416px) {
+@media (max-width: 1416px) {
   main {
     margin: 0px 200px 20px 200px;
   }
@@ -198,10 +198,9 @@ h2 {
   .results input {
     width: 100%;
   }
-  
 }
 
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   main {
     margin: 0px 10px 0px 10px;
   }
@@ -211,6 +210,4 @@ h2 {
   .results input {
     width: 100%;
   }
-  
 }
-
