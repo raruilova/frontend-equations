@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/GraphicArea.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
+import AppContext from "../context/AppContext";
 
 const GraphicArea = () => {
+    const {state} = useContext(AppContext);
+    console.log(state.equation);
     return (
         <div className="body-form">
         <div className="main">

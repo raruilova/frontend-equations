@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/EquationForm1.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
 import useEquations from "../hooks/useEquations";
+import AppContext from "../context/AppContext";
 
 const EquationForm1 = () => {
   const [variable, setVariable] = useState({
@@ -11,20 +12,21 @@ const EquationForm1 = () => {
     varc: 3,
   });
   const [equations, setEquations] = useState({});
+  const {addToEq} = useContext(AppContext);
   
   const [error, setError] = useState(false);
   
   const {vara, varb, varc } = variable;
 
-  const cuadraticEquationApi = async () => {
+  /*const cuadraticEquationApi = async () => {
     const res = await fetch(`http://127.0.0.1:8000/api/ecuacion/create?a=${vara}&b=${varb}&c=${varc}`);
       const data = await res.json();
       setEquations(data.x);
-  }
+  }*/
   
-  useEffect(() => {
+  /*useEffect(() => {
    cuadraticEquationApi();
-  }, []);
+  }, []);*/
 
   const setState = (e) => {
     setVariable({
@@ -33,12 +35,14 @@ const EquationForm1 = () => {
     });
   };
 
+  const result = useEquations(vara, varb, varc);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    cuadraticEquationApi();
-    
+    setEquations(result.x);
+    addToEq(result);
   };
-  console.log(equations);
+  console.log(equations.x1);
 
   return (
     <div className="body-form">
