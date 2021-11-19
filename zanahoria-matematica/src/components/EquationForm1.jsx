@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/EquationForm1.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
+import useEquations from "../hooks/useEquations";
+import AppContext from "../context/AppContext";
 
 const EquationForm1 = () => {
+  const [variable, setVariable] = useState({
+    vara: 2,
+    varb: -7,
+    varc: 3,
+  });
+  const [equations, setEquations] = useState({});
+  const {addToEq} = useContext(AppContext);
+  
+  const [error, setError] = useState(false);
+  
+  const {vara, varb, varc } = variable;
+
+  /*const cuadraticEquationApi = async () => {
+    const res = await fetch(`http://127.0.0.1:8000/api/ecuacion/create?a=${vara}&b=${varb}&c=${varc}`);
+      const data = await res.json();
+      setEquations(data.x);
+  }*/
+  
+  /*useEffect(() => {
+   cuadraticEquationApi();
+  }, []);*/
+
+  const setState = (e) => {
+    setVariable({
+      ...variable,
+      [e.target.name]: parseInt(e.target.value),
+    });
+  };
+
+  const result = useEquations(vara, varb, varc);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEquations(result.x);
+    addToEq(result);
+  };
+  console.log(equations.x1);
+
   return (
     <div className="body-form">
       <div className="main">
@@ -17,14 +57,35 @@ const EquationForm1 = () => {
               <h1>Zanahoria matemática</h1>
               <h2>Ecuaciones</h2>
             </div>
-            <form className="equations-form">
-              <label htmlFor="">Variable a</label>
-              <input type="number" name="" id="" placeholder="2" />
-              <label htmlFor="">Vatiable b</label>
-              <input type="number" name="" id="" placeholder="12" />
-              <label htmlFor="">Variable c</label>
-              <input type="number" name="" id="" placeholder="23" />
-              <button>Calcular</button>
+            <form className="equations-form" onSubmit={handleSubmit}>
+              <label htmlFor="vara">Variable a</label>
+              <input
+                type="number"
+                name="vara"
+                id=""
+                placeholder="2"
+                required
+                onChange={setState}
+              />
+              <label htmlFor="varb">Vatiable b</label>
+              <input
+                type="number"
+                name="varb"
+                id=""
+                placeholder="12"
+                required
+                onChange={setState}
+              />
+              <label htmlFor="varc">Variable c</label>
+              <input
+                type="number"
+                name="varc"
+                id=""
+                placeholder="23"
+                required
+                onChange={setState}
+              />
+              <button type="submit">Calcular</button>
             </form>
           </section>
           <section className="results-area">
@@ -39,14 +100,24 @@ const EquationForm1 = () => {
               <div className="results">
                 <label htmlFor="">X1</label>
 
-                <input type="text" placeholder="3" disabled />
+                <input
+                  type="text"
+                  placeholder="3"
+                  disabled
+                  defaultValue={equations.x1}
+                />
 
                 <label htmlFor="">X2</label>
 
-                <input type="text" placeholder="2" disabled />
+                <input
+                  type="text"
+                  placeholder="2"
+                  disabled
+                  defaultValue={equations.x2}
+                />
               </div>
               <Link to="/graphic">
-              <button className="button-graph">Ver gráfica</button>
+                <button className="button-graph">Ver gráfica</button>
               </Link>
             </div>
             <h4>Error!</h4>

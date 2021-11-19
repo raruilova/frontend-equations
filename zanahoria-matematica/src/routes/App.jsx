@@ -5,10 +5,14 @@ import EquationForm2 from "../components/EquationForm2";
 import GraphicArea from "../components/GraphicArea";
 import Home from "../components/Home";
 import Layout from "../container/Layout";
+import AppContext from "../context/AppContext";
+import useInitialState from '../hooks/useInitialState';
 import '../styles/global.css';
 
 const App = () => {
+    const initialState = useInitialState();
     return (
+        <AppContext.Provider value={initialState}>
         <BrowserRouter>
         <Layout>
             <Routes>
@@ -19,6 +23,7 @@ const App = () => {
             </Routes>
         </Layout>
         </BrowserRouter>
+        </AppContext.Provider>
     )
 };
 
