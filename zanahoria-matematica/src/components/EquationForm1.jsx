@@ -42,13 +42,13 @@ const EquationForm1 = () => {
     e.preventDefault();
     setEquations(result);
     addToEq(result);
-    //axios.post('http://127.0.0.1:8000/api/equation?', {
-    //  a: vara,
-    //  b: varb,
-    //  c: varc,
-    //  x1: result.x1,
-    //  x2: result.x2,
-    //}).then(res => {console.log(res)}).catch(err => {console.log(err)});
+    axios.post('http://127.0.0.1:8000/api/equation?', {
+      a: vara,
+      b: varb,
+      c: varc,
+      x1: result.x1,
+      x2: result.x2,
+    }).then(res => {console.log(res)}).catch(err => {console.log(err)});
   };
   console.log(equations);
 
