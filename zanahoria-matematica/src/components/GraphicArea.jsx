@@ -8,34 +8,36 @@ import DataRow from "./DataRow";
 
 const GraphicArea = () => {
   const { state } = useContext(AppContext);
-  let resultsx = [];
+  let results = [];
   let tablex = [];
   let resultsy = [];
   let tabley = [];
-  const resy =  state.equation.payload.arrayY.map((item2) =>  item2);
   
   const data = [
     ['x', 'dogs'],
+    state.equation.payload.arraxy.map(result => [result.x, result.y]),
   ];
-  state.equation.payload.arrayX.map((item) => data.push( item));
-  state.equation.payload.arrayY.map((item2) => data.push(item2));
+  state.equation.payload.arraxy.map(result => console.log([result.x, result.y]));
+  
 
-  console.log(data);
+  /*results.map((item) => console.log((item)));
+  
 
   //console.log( state.equation.payload.arrayX);
-  /*resultsx.forEach((item) => {
+  results.forEach((item) => {
     item.forEach((re) => {
       tablex.push(re);
     })
   });
   tablex.map(item => console.log(item));
   //
-  resultsy.forEach((item) => {
+  results.forEach((item) => {
     item.forEach((re) => {
       tabley.push(re);
     })
   });
   tabley.map(item => console.log(item));*/
+
   return (
     <div className="body-form">
       <div className="main">
@@ -79,27 +81,16 @@ const GraphicArea = () => {
   <ul className="responsive-table">
     <li className="table-header">
       <div className="col col-1">X</div>
-    </li>
-    {
-      state.equation.payload.arrayX.map((item, index) => (
-        <li className="table-row" key={index+1}>
-          <div className="col col-1" >{item}</div>
-         </li>
-      ))
-    }
-   
-  </ul>
-  <ul className="responsive-table">
-    <li className="table-header">
       <div className="col col-2">Y</div>
     </li>
     {
-      state.equation.payload.arrayX.map((item, index) => (
+      state.equation.payload.arraxy.map((item, index) => (
         <li className="table-row" key={index+1}>
-          <div className="col col-2" >{item}</div>
+          <div className="col col-1" >{item.x}</div>
+          <div className="col col-2">{item.y}</div>
          </li>
       ))
-    }
+      }
    
   </ul>
             </div>

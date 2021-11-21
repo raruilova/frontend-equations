@@ -4,6 +4,7 @@ import "../styles/EquationForm1.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
 import useEquations from "../hooks/useEquations";
 import AppContext from "../context/AppContext";
+import axios from "axios";
 
 const EquationForm1 = () => {
   const [variable, setVariable] = useState({
@@ -39,10 +40,17 @@ const EquationForm1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setEquations(result.x);
+    setEquations(result);
     addToEq(result);
+    //axios.post('http://127.0.0.1:8000/api/equation?', {
+    //  a: vara,
+    //  b: varb,
+    //  c: varc,
+    //  x1: result.x1,
+    //  x2: result.x2,
+    //}).then(res => {console.log(res)}).catch(err => {console.log(err)});
   };
-  console.log(equations.x1);
+  console.log(equations);
 
   return (
     <div className="body-form">
