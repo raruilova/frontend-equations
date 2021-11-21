@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const initialState = {
-    equation: []
+    equation: {}
 }
 
 const useInitialState = () => {
@@ -10,7 +10,7 @@ const useInitialState = () => {
     const addToEq = (payload) => {
         setState({
             ...state,
-            equation: [...state.equation, payload],
+            equation: {...state.equation, payload},
         });
     }
 

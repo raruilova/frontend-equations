@@ -1,9 +1,49 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import "../styles/EquationForm2.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
+import useDerivada from '../hooks/useDerivada';
+import axios from "axios";
 
 const EquationForm2 = () => {
+  const [variable, setVariable] = useState({
+    vara: 2,
+    varb: -7,
+    varc: 3,
+    vard: 4,
+    vare: 6,
+  });
+  const [derivada, setDerivada] = useState({});
+ 
+  
+  const [error, setError] = useState(false);
+  
+  const {vara, varb, varc , vard, vare} = variable;
+
+  
+
+  const setState = (e) => {
+    setVariable({
+      ...variable,
+      [e.target.name]: parseInt(e.target.value),
+    });
+  };
+
+  const result = useDerivada(vara, varb, varc, vard, vare);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setDerivada(result);
+    axios.post('http://192.168.1.7:8000/api/derivada?', {
+      a: vara,
+      b: varb,
+      c: varc,
+      d: vard,
+      e: vare,
+      x: result.x,
+    }).then(res => {console.log(res)}).catch(err => {console.log(err)});
+  };
+  console.log(derivada);
   return (
     <div className="body-form">
       <div className="main">
@@ -14,21 +54,20 @@ const EquationForm2 = () => {
           <section className="container-form-derivada">
             <div className="logo">
               <img src={logoZanahoria} alt="logo" />
-              <h1>Zanahoria matemática</h1>
               <h2>Derivada</h2>
             </div>
-            <form className="equations-form-derivada">
+            <form className="equations-form-derivada" onSubmit={handleSubmit}>
               <label htmlFor="">Variable a</label>
-              <input type="number" name="" id="" placeholder="2" />
+              <input type="number" name="vara" id="" placeholder="2" required onChange={setState}/>
               <label htmlFor="">Vatiable b</label>
-              <input type="number" name="" id="" placeholder="12" />
+              <input type="number" name="varb" id="" placeholder="12" required onChange={setState}/>
               <label htmlFor="">Variable c</label>
-              <input type="number" name="" id="" placeholder="3" />
+              <input type="number" name="varc" id="" placeholder="3" required onChange={setState}/>
               <label htmlFor="">Variable d</label>
-              <input type="number" name="" id="" placeholder="6" />
+              <input type="number" name="vard" id="" placeholder="6" required onChange={setState}/>
               <label htmlFor="">Variable e</label>
-              <input type="number" name="" id="" placeholder="11" />
-              <button>Calcular</button>
+              <input type="number" name="vare" id="" placeholder="11" required onChange={setState}/>
+              <button type="submit">Calcular</button>
             </form>
           </section>
           <section className="result-area-derivada">
@@ -42,7 +81,7 @@ const EquationForm2 = () => {
                 className="result-derivada"
                 cols="30"
                 rows="10"
-                value="6x^3 + 5x^2"
+                defaultValue={derivada.x}
               />
             </div>
           </section>
