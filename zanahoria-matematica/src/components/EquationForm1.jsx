@@ -42,7 +42,7 @@ const EquationForm1 = () => {
     e.preventDefault();
     setEquations(result);
     addToEq(result);
-    axios.post('http://127.0.0.1:8000/api/equation?', {
+    axios.post('http://192.168.1.7:8000/api/equation?', {
       a: vara,
       b: varb,
       c: varc,
@@ -62,7 +62,6 @@ const EquationForm1 = () => {
           <section className="container-form">
             <div className="logo">
               <img src={logoZanahoria} alt="logo" />
-              <h1>Zanahoria matemática</h1>
               <h2>Ecuaciones</h2>
             </div>
             <form className="equations-form" onSubmit={handleSubmit}>

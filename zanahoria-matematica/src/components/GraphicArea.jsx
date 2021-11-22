@@ -3,17 +3,30 @@ import { Link } from "react-router-dom";
 import "../styles/GraphicArea.scss";
 import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
 import AppContext from "../context/AppContext";
-import { Chart } from "react-google-charts";
+
+import {Line} from 'react-chartjs-2';
 
 const GraphicArea = () => {
   const { state } = useContext(AppContext);
 
-  const data = [
+  /*const data = [
     ["x", "y"],
 
   ];
   data.push(...state.equation.payload.arraxy.map((result) => [result.x, result.y]));
-
+  */
+  const data = {
+    labels: state.equation.payload.arraxy.map((result) => result.x),
+    datasets: [
+      {
+        label: '5',
+        data: state.equation.payload.arraxy.map((result) => result.y),
+        fill: false,
+      }
+    ]
+  }
+  
+  console.log(data.labels)
   
   return (
     <div className="body-form">
@@ -29,18 +42,8 @@ const GraphicArea = () => {
                 src="https://ingenieriabasica.es/wp-content/uploads/2019/08/ecuacion-de-segundo-grado-1024x576.jpg"
                 alt=""
               />
-              <Chart
-                chartType="LineChart"
-                loader={<div>Loading Chart</div>}
+              <Line
                 data={data}
-                options={{
-                  hAxis: {
-                    title: "X",
-                  },
-                  vAxis: {
-                    title: "Y",
-                  },
-                }}
               />
             </div>
           </section>
