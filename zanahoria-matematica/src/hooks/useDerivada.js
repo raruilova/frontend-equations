@@ -7,7 +7,7 @@ const useDerivada = (vara, varb, varc, vard, vare) => {
     let vc = parseInt(varc);
     let vd = parseInt(vard);
     let ve = parseInt(vare);
-    const API = `http://192.168.1.7:8000/api/derivada?a=${va}&b=${vb}&c=${vc}&d=${vd}&e=${ve}`;
+    const API = `http://127.0.0.1:8000/api/derivada?a=${va}&b=${vb}&c=${vc}&d=${vd}&e=${ve}`;
   
     const responseApi = async () => {
       const res = await fetch(API);

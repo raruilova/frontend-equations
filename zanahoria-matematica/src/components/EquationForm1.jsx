@@ -40,6 +40,10 @@ const EquationForm1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (result.mensaje === "no hay soluciones reales") {
+      setError(true);
+      return;
+    }
     setEquations(result);
     addToEq(result);
     axios.post('http://192.168.1.7:8000/api/equation?', {
@@ -123,12 +127,16 @@ const EquationForm1 = () => {
                   defaultValue={equations.x2}
                 />
               </div>
-              <Link to="/graphic">
+              {!error && ( <Link to="/graphic">
                 <button className="button-graph">Ver gráfica</button>
-              </Link>
+              </Link>)}
+             
             </div>
-            <h4>Error!</h4>
+            {error ?  
+            <div>
             <p>No se encontró una solución para esta ecuación</p>
+            </div>
+             : null}
           </section>
         </div>
       </div>
