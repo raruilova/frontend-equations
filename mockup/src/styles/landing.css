@@ -35,7 +35,14 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   -webkit-top-highlight-color: transparent;
-  padding: 5vh 15px;
+  background: rgb(255, 121, 21);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 121, 21, 0.33) 0%,
+    rgba(160, 36, 36, 0.5) 50%,
+    rgba(255, 121, 21, 0.33) 100%
+  );
+  
 }
 body::before {
   content: "";
@@ -44,14 +51,25 @@ body::before {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--gren-yellow);
+  /*background-color: var(--gren-yellow);*/
   z-index: -1;
   opacity: 0.12;
 }
+
+.header .navbar {
+  margin-bottom: 10px;
+  background-color: transparent !important;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;
 }
+
+.nav-link{
+  color: blue;
+}
+
 section {
   background-color: var(--white-alpha-60);
   border: 1px solid var(--white-alpha-40);
@@ -66,11 +84,11 @@ a {
   max-width: 1200px;
   margin: auto;
 }
-.container {
+.conta-hoe {
   padding: 0 40px;
   width: 100%;
 }
-.row {
+.col {
   display: flex;
   flex-wrap: wrap;
 }
@@ -78,7 +96,8 @@ a {
   align-items: center;
 }
 /*buttons*/
-.btn {
+.boton {
+  text-decoration: none;
   line-height: 1.5;
   background-color: var(--white-alpha-60);
   border: 1px solid var(--white-alpha-40);
@@ -95,7 +114,7 @@ a {
   overflow: hidden;
   vertical-align: middle;
 }
-.btn::before {
+.boton::before {
   content: "";
   position: absolute;
   left: 0;
@@ -106,10 +125,10 @@ a {
   z-index: -1;
   transition: width 0.3s ease;
 }
-.btn:hover::before {
+.boton:hover::before {
   width: 100%;
 }
-.btn:hover {
+.boton:hover {
   color: var(--white);
 }
 .home-section {
@@ -126,12 +145,14 @@ a {
   font-size: 18px;
 }
 .home-text h1 {
-  font-size: 50px;
+  font-size: 2.5rem;
   text-transform: capitalize;
+  color: white;
 }
 .home-text h2 {
-  font-size: 20px;
+  font-size: 2.5rem;
   text-transform: capitalize;
+  color: #db8330;
 }
 
 .home-img,
@@ -174,9 +195,9 @@ a {
 }
 @media (max-width: 500px) {
   .home-text h1 {
-    font-size: 30px;
+    font-size: 1.8rem;
   }
   .home-text h2 {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }

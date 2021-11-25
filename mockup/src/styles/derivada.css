@@ -1,4 +1,5 @@
 :root {
+  --main-color: #63BF21;
   --button-calc: #DB8330;
   --results-area: #DB8330;
   --background-form: #404040;
@@ -16,14 +17,17 @@ body {
   background: rgb(255, 121, 21);
   background: linear-gradient(
     90deg,
-    rgba(255, 121, 21, 0.4713235636051295) 0%,
-    rgba(160, 36, 36, 0.8802871490393032) 35%,
-    rgba(255, 121, 21, 0.40129555240064774) 100%
+    rgba(255, 121, 21, 0.33) 0%,
+    rgba(160, 36, 36, 0.5) 50%,
+    rgba(255, 121, 21, 0.33) 100%
   );
 }
-.header {
-  margin-bottom: 80px;
+
+.header .navbar {
+  margin-bottom: 10px;
+  background-color: transparent !important;
 }
+
 main {
   background: rgba(255, 255, 255, 0.25);
 
@@ -116,7 +120,7 @@ h2 {
   height: 30px;
   width: 200px;
 }
-.equations-form-derivada button {
+.botoncalcular {
   background-color: var(--button-calc);
   color: white;
   margin-top: 10px;
@@ -127,6 +131,12 @@ h2 {
   border-radius: 15px;
   padding: 5px;
   justify-items: flex-end;
+}
+
+.botoncalcular:hover{
+  color: white;
+  background-color: var(--main-color);
+  transition: width 0.3s ease;
 }
 
 /*media queries*/
