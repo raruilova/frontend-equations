@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/EquationForm1.scss";
-import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
+import logoZanahoria from "@logos/logoz_2.png";
 import useEquations from "../hooks/useEquations";
 import AppContext from "../context/AppContext";
 import axios from "axios";
@@ -61,7 +61,7 @@ const EquationForm1 = () => {
         <div className="container">
           <section className="container-form">
             <div className="logo">
-              <img src={logoZanahoria} alt="logo" />
+              <img className="logoz"src={logoZanahoria} alt="" />
               <h2>Ecuaciones</h2>
             </div>
             <form className="equations-form" onSubmit={handleSubmit}>
