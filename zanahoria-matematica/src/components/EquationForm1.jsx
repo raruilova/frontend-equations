@@ -46,7 +46,7 @@ const EquationForm1 = () => {
     }
     setEquations(result);
     addToEq(result);
-    axios.post('http://192.168.1.7:8000/api/equation?', {
+    axios.post('http://52.15.59.104/api/equation?', {
       a: vara,
       b: varb,
       c: varc,
@@ -59,9 +59,6 @@ const EquationForm1 = () => {
   return (
     <div className="body-form">
       <div className="main">
-        <Link to="/">
-          <button className="btn-back">Atras</button>
-        </Link>
         <div className="container">
           <section className="container-form">
             <div className="logo">

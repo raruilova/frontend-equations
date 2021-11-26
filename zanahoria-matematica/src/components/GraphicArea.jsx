@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import "../styles/GraphicArea.scss";
-import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
+import logoZanahoria from "@logos/logoz_2.png";
 import AppContext from "../context/AppContext";
 
 import {Line} from 'react-chartjs-2';
@@ -31,9 +30,6 @@ const GraphicArea = () => {
   return (
     <div className="body-form">
       <div className="main">
-        <Link to="/ecuacion1">
-          <button className="btn-back">Atras</button>
-        </Link>
         <div className="container-result">
           <section className="result-area">
             <div className="result-area__graphic">

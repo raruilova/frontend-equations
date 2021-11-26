@@ -2,35 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import logo from "@logos/logo-temp.jpg";
+import logoin from "@logos/logo.jpg";
 
 const Home = () => (
   <div className="body">
     <div className="main">
-      <section id="section" className="home-section align-items-center">
-        <div className="container-landing">
-          <div className="row align-items-center">
-            <div className="home-text">
-              <p>
-                Por: Angel Echeverria, David Pérez, Robinson Ruilova y Flor
-                Segovia
-              </p>
-              <h1>Zanahoria Matemática</h1>
-              <h2>Ecuaciones</h2>
-              <Link to="/ecuacion1" className="btn">
-                Ecuacion 1
-              </Link>
-              <Link to="/ecuacion2" className="btn">
-                Ecuacion 2
-              </Link>
+        <section className="home-section alignitemscenter">
+            <div className="conta-hoe">
+                <div className="fila alignitemscenter">
+                    <div className="home-text">
+                        <h1 className="display-1">LA ZANAHORIA</h1>
+                        <h2 className="display-1">MATEMÁTICA</h2>
+                        <br/>
+                        <h4>Es una app que te ayuda a resolver esos problemas matemáticos que te rompen la cabeza!</h4>
+                    </div>
+
+                    <div className="ho-imag">
+                        <div className="img-box logos">
+                            <img src={logoin} alt=""/>
+                        </div>
+                    </div>
+                    <div className="home-text">
+                        <p className="h5">Por: Angel Echeverria, David Pérez, Robinson Ruilova y Flor Segovia</p>
+                    </div>
+                    
+                </div>
             </div>
-            <div className="home-img">
-              <div className="img-box">
-                <img className="img" src={logo} alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
   </div>
 );

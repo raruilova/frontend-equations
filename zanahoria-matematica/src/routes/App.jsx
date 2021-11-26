@@ -18,7 +18,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/ecuacion1" element={<EquationForm1/>} />
-                <Route path="/ecuacion2" element={<EquationForm2/>} />
+                <Route path="/derivada" element={<EquationForm2/>} />
                 <Route path="/graphic" element={<GraphicArea/>} />
             </Routes>
         </Layout>

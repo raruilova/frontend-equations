@@ -3,18 +3,19 @@
 
 body {
   min-height: 100vh;
+  background: rgb(255, 121, 21);
   background: linear-gradient(
     90deg,
-    rgba(255, 121, 21, 0.4713235636051295) 0%,
-    rgba(160, 36, 36, 0.8802871490393032) 35%,
-    rgba(255, 121, 21, 0.40129555240064774) 100%
+    rgba(255, 121, 21, 0.33) 0%,
+    rgba(160, 36, 36, 0.5) 50%,
+    rgba(255, 121, 21, 0.33) 100%
   );
   font-size: 16px;
   color: var(--blue-dark);
   line-height: 1.5;
   overflow-x: hidden;
   -webkit-top-highlight-color: transparent;
-  padding: 5vh 15px;
+  padding: 0vh 10px;
 }
 body::before {
   content: "";
@@ -26,12 +27,19 @@ body::before {
   background: rgb(255, 121, 21);
   background: linear-gradient(
     90deg,
-    rgba(255, 121, 21, 0.4713235636051295) 0%,
-    rgba(160, 36, 36, 0.8802871490393032) 35%,
-    rgba(255, 121, 21, 0.40129555240064774) 100%
+    rgba(255, 121, 21, 0.33) 0%,
+    rgba(160, 36, 36, 0.5) 50%,
+    rgba(255, 121, 21, 0.33) 100%
   );
   z-index: -1;
   opacity: 0.12;
+}
+
+.logos img {
+  height: 250px;
+  width: 250px;
+  justify-self: center;
+  margin: 0px 0px 0px 0px;
 }
 .img {
   max-width: 100%;
@@ -55,11 +63,12 @@ a {
   padding: 0 40px;
   width: 100%;
 }
-.row {
+.fila {
   display: flex;
   flex-wrap: wrap;
+  flex: 1 0 0%;
 }
-.align-items-center {
+.alignitemscenter {
   align-items: center;
 }
 /*buttons*/
@@ -104,7 +113,7 @@ a {
 }
 
 .home-text,
-.home-img {
+.ho-imag {
   width: 50%;
   padding: 15px;
 }
@@ -112,18 +121,19 @@ a {
   font-size: 18px;
 }
 .home-text h1 {
-  font-size: 50px;
+  font-size: 2.5rem;
   text-transform: capitalize;
+  color: white;
 }
 .home-text h2 {
-  color: black;
-  font-size: 20px;
+  font-size: 2.5rem;
   text-transform: capitalize;
+  color: #db8330;
 }
 
-.home-img,
+.ho-imag,
 .img-box {
-  max-width: 360px;
+  max-width: 315px;
   background-color: var(--white-alpha-60);
   border-radius: 50%;
   border: 8px solid var(--white-alpha-60);
@@ -141,16 +151,16 @@ a {
     padding: 0;
   }
   .home-text,
-  .home-img {
+  .ho-imag {
     width: 100%;
   }
   .home-text {
     text-align: center;
   }
-  .home-img {
+  .ho-imag {
     order: -1;
   }
-  .home-img .img-box {
+  .ho-imag .img-box {
     max-width: 300px;
   }
   .home-text .btn {

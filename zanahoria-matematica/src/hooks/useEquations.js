@@ -5,7 +5,7 @@ const useEquations = (vara, varb, varc) => {
   let va = parseInt(vara);
   let vb = parseInt(varb);
   let vc = parseInt(varc);
-  const API = `http://127.0.0.1:8000/api/equation?a=${va}&b=${vb}&c=${vc}`;
+  const API = `http://52.15.59.104/api/equation?a=${va}&b=${vb}&c=${vc}`;
 
   const responseApi = async () => {
     const res = await fetch(API);

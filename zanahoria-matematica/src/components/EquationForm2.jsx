@@ -1,7 +1,6 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
 import "../styles/EquationForm2.scss";
-import logoZanahoria from "@logos/logo-zanahoria-matematica.png";
+import logoZanahoria from "@logos/logoz_2.png";
 import useDerivada from '../hooks/useDerivada';
 import axios from "axios";
 
@@ -34,7 +33,7 @@ const EquationForm2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setDerivada(result);
-    axios.post('http://192.168.1.7:8000/api/derivada?', {
+    axios.post('http://52.15.59.104/api/derivada?', {
       a: vara,
       b: varb,
       c: varc,
@@ -47,9 +46,6 @@ const EquationForm2 = () => {
   return (
     <div className="body-form">
       <div className="main">
-        <Link to="/">
-          <button className="btn-back">Atras</button>
-        </Link>
         <div className="container-derivada">
           <section className="container-form-derivada">
             <div className="logo">
