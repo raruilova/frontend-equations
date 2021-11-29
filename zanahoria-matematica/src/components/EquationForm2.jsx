@@ -33,14 +33,14 @@ const EquationForm2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setDerivada(result);
-    axios.post('http://52.15.59.104/api/derivada?', {
+    /*axios.post('http://52.15.59.104/api/derivada?', {
       a: vara,
       b: varb,
       c: varc,
       d: vard,
       e: vare,
       x: result.x,
-    }).then(res => {console.log(res)}).catch(err => {console.log(err)});
+    }).then(res => {console.log(res)}).catch(err => {console.log(err)});*/
   };
   console.log(derivada);
   return (

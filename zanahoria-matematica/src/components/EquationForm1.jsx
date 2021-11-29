@@ -44,7 +44,7 @@ const EquationForm1 = () => {
       setError(true);
       return;
     }
-    setEquations(result);
+    setEquations(result[0]);
     addToEq(result);
     axios.post('http://52.15.59.104/api/equation?', {
       a: vara,

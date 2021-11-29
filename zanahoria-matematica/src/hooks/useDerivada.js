@@ -7,7 +7,8 @@ const useDerivada = (vara, varb, varc, vard, vare) => {
     let vc = parseInt(varc);
     let vd = parseInt(vard);
     let ve = parseInt(vare);
-    const API = `http://52.15.59.104/api/derivada?a=${va}&b=${vb}&c=${vc}&d=${vd}&e=${ve}`;
+    //const API = `http://52.15.59.104/api/derivada?a=${va}&b=${vb}&c=${vc}&d=${vd}&e=${ve}`;
+    const API = `https://mysterious-river-04485.herokuapp.com/api/derivada4G/${va}/${vb}}/${vc}}/${vd}}/${ve}`;
   
     const responseApi = async () => {
       const res = await fetch(API);
@@ -23,7 +24,7 @@ const useDerivada = (vara, varb, varc, vard, vare) => {
     derivada.c = vc;
     derivada.d = vd;
     derivada.e = ve;
-    console.log(derivada);
+
     return derivada;
   };
   
