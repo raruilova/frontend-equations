@@ -19,16 +19,6 @@ const EquationForm1 = () => {
   
   const {vara, varb, varc } = variable;
 
-  /*const cuadraticEquationApi = async () => {
-    const res = await fetch(`http://127.0.0.1:8000/api/ecuacion/create?a=${vara}&b=${varb}&c=${varc}`);
-      const data = await res.json();
-      setEquations(data.x);
-  }*/
-  
-  /*useEffect(() => {
-   cuadraticEquationApi();
-  }, []);*/
-
   const setState = (e) => {
     setVariable({
       ...variable,
@@ -46,7 +36,7 @@ const EquationForm1 = () => {
     }
     setEquations(result[0]);
     addToEq(result);
-    axios.post('http://52.15.59.104/api/equation?', {
+    axios.post('https://mysterious-river-04485.herokuapp.com/api/ecuacion/', {
       a: vara,
       b: varb,
       c: varc,

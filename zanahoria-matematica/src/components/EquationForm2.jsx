@@ -32,15 +32,15 @@ const EquationForm2 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDerivada(result);
-    /*axios.post('http://52.15.59.104/api/derivada?', {
+    setDerivada(result[0]);
+    axios.post('https://mysterious-river-04485.herokuapp.com/api/derivada4G/', {
       a: vara,
       b: varb,
       c: varc,
       d: vard,
       e: vare,
       x: result.x,
-    }).then(res => {console.log(res)}).catch(err => {console.log(err)});*/
+    }).then(res => {console.log(res)}).catch(err => {console.log(err)});
   };
   console.log(derivada);
   return (
@@ -77,7 +77,7 @@ const EquationForm2 = () => {
                 className="result-derivada"
                 cols="30"
                 rows="10"
-                defaultValue={derivada.x}
+                defaultValue={derivada.fpx}
               />
             </div>
           </section>
